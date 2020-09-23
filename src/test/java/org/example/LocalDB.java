@@ -12,7 +12,6 @@ public class LocalDB {
             @Override
             public void apply(String dbname) {
                 System.out.println(" "+dbname);
-
             }
         });
     }

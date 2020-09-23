@@ -7,6 +7,11 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoIterable;
 import org.bson.Document;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
+
 public class NewCollection {
     public static void main(String[] args) {
         //Connection part
@@ -34,7 +39,9 @@ public class NewCollection {
         });
         System.out.println("////////////////////////////////////////////");
         //Createa a new Collection
-        database.createCollection("newBox");
+        Scanner fi=new Scanner(System.in);
+        String new_collection=fi.next();
+        database.createCollection(new_collection);
         //List collections
         MongoIterable<String> iterable3=database.listCollectionNames();
         iterable3.forEach(new Block<String>() {
